@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kouame Marius Aka, développeur mobile et web</title>
+  <meta name="description" content="Portfolio de Kouame Marius, développeur mobile et web (BTS Informatique). Applications mobiles Flutter et sites web reliés à des bases de données Firebase et SQL.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marius-a12.github.io/portfolio/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Kouame Marius">
+  <meta property="og:title" content="Kouame Marius, développeur mobile et web">
+  <meta property="og:description" content="Applications mobiles Flutter et sites web reliés à des bases de données Firebase et SQL.">
+  <meta property="og:image" content="https://marius-a12.github.io/portfolio/images/partage.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Kouame Marius, développeur mobile et web">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.4/dist/index.global.js" integrity="sha384-LhJn7QKq7hHz9EqN//RkaYS9p1ZU3MqAxjeV0JI95iQ5Gol1uz/cQQ+pesz0xum7" crossorigin="anonymous"></script>
+  <style type="text/tailwindcss">
+    /* Relie les classes Tailwind aux couleurs définies dans css/style.css (thème clair et sombre). */
+    @theme inline {
+      --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+      --color-fond: var(--fond);
+      --color-surface: var(--surface);
+      --color-encre: var(--encre);
+      --color-doux: var(--doux);
+      --color-trait: var(--trait);
+      --color-trait-fort: var(--trait-fort);
+      --color-accent: var(--accent);
+      --color-accent-fort: var(--accent-fort);
+      --color-sur-accent: var(--sur-accent);
+      --color-accent-doux: var(--accent-doux);
+      --color-accent-texte: var(--accent-texte);
+      --color-media: var(--media);
+    }
+  </style>
+  <script src="js/commun.js" defer></script>
+  <script src="js/accueil.js" defer></script>
+</head>
+<body>
+  <a class="lien-evitement sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-4 focus:z-50 focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:font-semibold focus:text-sur-accent" href="#contenu">Aller au contenu</a>
+
+  <header class="entete-site sticky top-0 z-30 border-b border-trait bg-fond/75 backdrop-blur-xl">
+    <div class="entete-contenu mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-3 px-6">
+      <a class="nom-site flex items-center gap-2.5 whitespace-nowrap" href="#contenu" aria-label="Kouame Marius Aka, accueil">
+        <span class="grid size-8 place-items-center rounded-lg bg-accent font-mono text-[11px] font-bold text-sur-accent">KM</span>
+        <span class="hidden text-[15px] font-bold tracking-tight text-encre min-[420px]:inline">Kouame Marius Aka</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <nav aria-label="Navigation principale">
+          <button class="bouton-menu cursor-pointer rounded-full border border-trait px-3.5 py-1.5 text-sm font-medium text-encre transition-colors hover:border-accent hover:text-accent" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+          <ul class="menu flex items-center gap-1" id="menu-principal">
+            <li><a class="block rounded-full px-3.5 py-1.5 text-sm font-medium text-doux transition-colors hover:text-encre aria-[current=true]:bg-trait aria-[current=true]:text-encre max-md:rounded-lg max-md:py-3 max-md:text-base" href="#realisations">Réalisations</a></li>
+            <li><a class="block rounded-full px-3.5 py-1.5 text-sm font-medium text-doux transition-colors hover:text-encre aria-[current=true]:bg-trait aria-[current=true]:text-encre max-md:rounded-lg max-md:py-3 max-md:text-base" href="#competences">Compétences</a></li>
+            <li><a class="block rounded-full px-3.5 py-1.5 text-sm font-medium text-doux transition-colors hover:text-encre aria-[current=true]:bg-trait aria-[current=true]:text-encre max-md:rounded-lg max-md:py-3 max-md:text-base" href="#parcours">Parcours</a></li>
+            <li><a class="block rounded-full px-3.5 py-1.5 text-sm font-medium text-doux transition-colors hover:text-encre aria-[current=true]:bg-trait aria-[current=true]:text-encre max-md:rounded-lg max-md:py-3 max-md:text-base" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="bouton-theme cursor-pointer rounded-full border border-trait px-3.5 py-1.5 text-sm font-medium text-encre transition-colors hover:border-accent hover:text-accent" type="button">Thème<span class="etat-theme sr-only"></span></button>
+      </div>
+    </div>
+    <div class="barre-progression pointer-events-none absolute inset-x-0 -bottom-px h-0.5 bg-accent" aria-hidden="true"></div>
+  </header>
+
+  <main class="scroll-mt-16" id="contenu" tabindex="-1">
+    <section class="accueil-intro relative overflow-hidden border-b border-trait" aria-labelledby="titre-principal">
+      <div class="grille-fond pointer-events-none absolute inset-0" aria-hidden="true"></div>
+      <div class="halo parallaxe-halo pointer-events-none absolute -top-56 left-1/2 h-[520px] w-[760px] max-w-none -translate-x-1/2 rounded-full" aria-hidden="true"></div>
+
+      <div class="parallaxe-contenu relative mx-auto grid max-w-6xl items-center gap-14 px-6 pt-16 pb-20 sm:pt-24 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-28 lg:pb-28">
+        <div>
+          <p style="--ordre: 0" class="entree inline-flex items-center rounded-full border border-trait bg-surface/70 px-3 py-1 font-mono text-xs text-doux backdrop-blur">Abidjan, Côte d'Ivoire</p>
+          <h1 style="--ordre: 1" class="entree mt-6 text-5xl leading-[0.95] font-extrabold tracking-[-0.04em] text-encre sm:text-7xl" id="titre-principal">Kouame Marius Aka</h1>
+          <p style="--ordre: 2" class="entree mt-6 text-xl font-semibold tracking-tight text-encre sm:text-2xl">Développeur <span class="text-accent">mobile et web</span>, BTS Informatique</p>
+          <p style="--ordre: 3" class="entree mt-5 max-w-xl text-lg leading-relaxed text-doux">Je conçois des applications mobiles Flutter et des sites web reliés à des bases de données Firebase et SQL.</p>
+          <p style="--ordre: 4" class="entree mt-10 flex flex-wrap gap-3">
+            <a class="bouton inline-flex items-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-sur-accent transition-colors hover:bg-accent-fort" href="#realisations">Voir mes réalisations</a>
+            <a class="bouton bouton-secondaire inline-flex items-center rounded-full border border-trait-fort bg-surface/60 px-6 py-3 text-sm font-semibold text-encre backdrop-blur transition-colors hover:border-accent hover:text-accent" href="cv/d%C3%A9veloppeur_fullstack_kouame_marius.pdf" download>Télécharger mon CV</a>
+            <a class="bouton bouton-secondaire inline-flex items-center rounded-full border border-trait-fort bg-surface/60 px-6 py-3 text-sm font-semibold text-encre backdrop-blur transition-colors hover:border-accent hover:text-accent" href="cv/d%C3%A9veloppeur_fullstack_kouame_marius.pdf" target="_blank" rel="noopener">Voir mon CV<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span></a>
+          </p>
+        </div>
+
+        <div style="--ordre: 5" class="entree code-carte overflow-hidden rounded-2xl border border-trait bg-surface/80 backdrop-blur" aria-hidden="true">
+          <div class="flex items-center justify-between border-b border-trait px-5 py-3 font-mono text-xs text-doux">
+            <span>profil.ts</span>
+            <span>TypeScript</span>
+          </div>
+          <pre class="overflow-x-auto px-4 py-5 font-mono text-[12px] leading-7 text-encre sm:px-6 sm:text-[13px]"><code><span class="text-doux">const</span> developpeur = {
+  nom: <span class="text-accent">"Kouame Marius Aka"</span>,
+  poste: <span class="text-accent">"Développeur mobile et web"</span>,
+  formation: <span class="text-accent">"BTS Informatique (IDA)"</span>,
+  ville: <span class="text-accent">"Abidjan"</span>,
+  stack: [<span class="text-accent">"Flutter"</span>, <span class="text-accent">"Laravel"</span>, <span class="text-accent">"React"</span>],
+};<span class="curseur ml-1 inline-block h-4 w-2 translate-y-0.5 bg-accent"></span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="bandeau border-b border-trait bg-surface/50" aria-label="Technologies utilisées dans mes réalisations">
+      <div class="mx-auto flex max-w-6xl items-center gap-4 px-6 py-5">
+        <div class="bandeau-masque min-w-0 flex-1 overflow-hidden">
+          <ul class="defilement flex" id="bandeau-technologies"></ul>
+        </div>
+        <button class="bouton-pause shrink-0 cursor-pointer rounded-full border border-trait px-3 py-1 font-mono text-xs text-doux transition-colors hover:border-accent hover:text-accent" type="button">Pause</button>
+      </div>
+    </section>
+
+    <section class="section apparition scroll-mt-16" id="realisations" aria-labelledby="titre-realisations">
+      <div class="mx-auto max-w-6xl px-6 py-12 sm:py-16">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p class="font-mono text-sm text-accent" aria-hidden="true">01</p>
+            <h2 class="mt-2 text-4xl font-extrabold tracking-[-0.03em] text-encre sm:text-5xl" id="titre-realisations">Réalisations</h2>
+          </div>
+          <div class="filtre flex flex-wrap gap-1 rounded-2xl border border-trait bg-surface p-1 sm:rounded-full" role="group" aria-label="Filtrer les réalisations par catégorie">
+            <button class="cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium text-doux transition-colors hover:text-encre aria-pressed:bg-accent aria-pressed:text-sur-accent aria-pressed:hover:text-sur-accent" type="button" data-categorie="tout" aria-pressed="true">Tout</button>
+            <button class="cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium text-doux transition-colors hover:text-encre aria-pressed:bg-accent aria-pressed:text-sur-accent aria-pressed:hover:text-sur-accent" type="button" data-categorie="mobile" aria-pressed="false">Mobile</button>
+            <button class="cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium text-doux transition-colors hover:text-encre aria-pressed:bg-accent aria-pressed:text-sur-accent aria-pressed:hover:text-sur-accent" type="button" data-categorie="web" aria-pressed="false">Web</button>
+            <button class="cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium text-doux transition-colors hover:text-encre aria-pressed:bg-accent aria-pressed:text-sur-accent aria-pressed:hover:text-sur-accent" type="button" data-categorie="automatisation" aria-pressed="false">Automatisation</button>
+            <button class="cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium text-doux transition-colors hover:text-encre aria-pressed:bg-accent aria-pressed:text-sur-accent aria-pressed:hover:text-sur-accent" type="button" data-categorie="donnees" aria-pressed="false">Données</button>
+          </div>
+        </div>
+        <p class="filtre-compte mt-8 min-h-5 font-mono text-xs text-doux" id="compte-projets" role="status"></p>
+        <div class="grille-cartes mt-5 grid gap-6 md:grid-cols-2" id="grille-projets">
+          <noscript><p class="message text-doux">Activez JavaScript pour afficher les réalisations.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="section apparition scroll-mt-16 border-t border-trait" id="competences" aria-labelledby="titre-competences">
+      <div class="mx-auto max-w-6xl px-6 py-12 sm:py-16">
+        <p class="font-mono text-sm text-accent" aria-hidden="true">02</p>
+        <h2 class="mt-2 text-4xl font-extrabold tracking-[-0.03em] text-encre sm:text-5xl" id="titre-competences">Compétences</h2>
+        <div class="grille-competences mt-12 grid gap-6 md:grid-cols-3" id="liste-competences"></div>
+      </div>
+    </section>
+
+    <section class="section apparition scroll-mt-16 border-t border-trait" id="parcours" aria-labelledby="titre-parcours">
+      <div class="mx-auto max-w-6xl px-6 py-12 sm:py-16">
+        <p class="font-mono text-sm text-accent" aria-hidden="true">03</p>
+        <h2 class="mt-2 text-4xl font-extrabold tracking-[-0.03em] text-encre sm:text-5xl" id="titre-parcours">Parcours</h2>
+        <ol class="parcours mt-12" id="liste-parcours"></ol>
+      </div>
+    </section>
+
+    <section class="section apparition scroll-mt-16 border-t border-trait" id="contact" aria-labelledby="titre-contact">
+      <div class="mx-auto max-w-6xl px-6 py-12 sm:py-16">
+        <div class="relative overflow-hidden rounded-3xl border border-trait bg-surface px-6 py-10 sm:px-12 sm:py-12">
+          <div class="grille-fond pointer-events-none absolute inset-0" aria-hidden="true"></div>
+          <div class="halo pointer-events-none absolute -right-40 -bottom-48 h-[420px] w-[520px] rounded-full" aria-hidden="true"></div>
+          <div class="relative">
+            <p class="font-mono text-sm text-accent" aria-hidden="true">04</p>
+            <h2 class="mt-2 text-4xl font-extrabold tracking-[-0.03em] text-encre sm:text-5xl" id="titre-contact">Contact</h2>
+            <dl class="contact mt-10 grid gap-4 sm:grid-cols-2" id="liste-contact"></dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied-site border-t border-trait">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-10 font-mono text-xs text-doux">
+      <p>Kouame Marius, 2026</p>
+      <a class="haut-de-page group inline-flex items-center rounded-full border border-trait-fort px-4 py-2 text-encre transition duration-200 hover:-translate-y-1 hover:border-accent hover:bg-accent hover:text-sur-accent focus-visible:border-accent focus-visible:bg-accent focus-visible:text-sur-accent motion-reduce:transition-colors motion-reduce:hover:translate-y-0" href="#contenu">
+        <span class="relative block h-4 overflow-hidden leading-4">
+          <span class="block transition-transform duration-300 ease-out group-hover:-translate-y-full group-focus-visible:-translate-y-full motion-reduce:transition-none">Haut de page</span>
+          <span class="absolute inset-x-0 top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full group-focus-visible:-translate-y-full motion-reduce:transition-none" aria-hidden="true">Haut de page</span>
+        </span>
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "contact": {
+    "email": "kmarius693@gmail.com",
+    "telephone": "+225 07 77 93 51 65",
+    "whatsapp": "+225 07 77 93 51 65",
+    "adresse": "Abidjan, Adjamé, Paillet",
+    "linkedin": "",
+    "github": ""
+  },
+  "competences": [
+    {
+      "domaine": "Mobile",
+      "outils": ["Flutter", "Dart", "Firebase Authentication"]
+    },
+    {
+      "domaine": "Web",
+      "outils": ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Tailwind CSS", "PHP"]
+    },
+    {
+      "domaine": "Bases de données",
+      "outils": ["Cloud Firestore", "Règles de sécurité Firestore", "PostgreSQL", "PDO", "Power BI (tableaux de bord)"]
+    }
+  ],
+  "parcours": [
+    {
+      "intitule": "Développeur IA",
+      "lieu": "HKStudio",
+      "periode": "",
+      "description": "Je participe à plusieurs projets. Je développe notamment un mini-site pour un restaurant : le client scanne un code QR et donne son avis sur la fiche Google du restaurant. Le restaurant récupère son nom et son numéro de téléphone."
+    },
+    {
+      "intitule": "Stage",
+      "lieu": "MES-Afrique",
+      "periode": "",
+      "description": "Développement de l'application SignalPanne en Flutter et Firebase."
+    },
+    {
+      "intitule": "BTS Informatique (IDA)",
+      "lieu": "ITES 2 Plateaux (Côte d'Ivoire)",
+      "periode": "2024 - 2025",
+      "description": ""
+    }
+  ]
+}

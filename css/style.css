@@ -1,0 +1,313 @@
+/* Portfolio de Kouame Marius.
+   La mise en page est faite avec les classes Tailwind (dans le HTML et dans les scripts).
+   Ce fichier garde les couleurs des deux thèmes et les effets que Tailwind ne couvre pas simplement :
+   quadrillage, halo, lumière qui suit le curseur, bandeau qui défile, curseur de la carte de code. */
+
+/* Couleurs : une seule source pour les deux pages.
+   Tailwind les utilise sous les noms bg-fond, text-encre, text-doux, border-trait, bg-accent, etc. */
+
+:root {
+  --fond: #fafafa;
+  --surface: #ffffff;
+  --encre: #09090b;
+  --doux: #52525b;
+  --trait: #e4e4e7;
+  --trait-fort: #d4d4d8;
+  --accent: #047857;
+  --accent-fort: #065f46;
+  --sur-accent: #ffffff;
+  --accent-doux: #ecfdf5;
+  --accent-texte: #065f46;
+  --media: #f4f4f5;
+  --grille: rgb(9 9 11 / 0.06);
+  --halo: rgb(16 185 129 / 0.16);
+  --lueur: rgb(16 185 129 / 0.08);
+  color-scheme: light;
+}
+
+[data-theme="sombre"] {
+  --fond: #09090b;
+  --surface: #121215;
+  --encre: #fafafa;
+  --doux: #a1a1aa;
+  --trait: #27272a;
+  --trait-fort: #3f3f46;
+  --accent: #34d399;
+  --accent-fort: #6ee7b7;
+  --sur-accent: #022c22;
+  --accent-doux: #052e22;
+  --accent-texte: #6ee7b7;
+  --media: #18181b;
+  --grille: rgb(250 250 250 / 0.05);
+  --halo: rgb(52 211 153 / 0.13);
+  --lueur: rgb(52 211 153 / 0.09);
+  color-scheme: dark;
+}
+
+/* Base, appliquée avant même que Tailwind ait généré ses classes. */
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--encre);
+  font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--sur-accent);
+}
+
+/* La page reste masquée le temps que Tailwind génère ses styles (voir js/theme.js). */
+.tw-attente body {
+  visibility: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+main:focus {
+  outline: none;
+}
+
+.visionneuse :focus-visible {
+  outline-color: #ffffff;
+}
+
+/* Menu replié sur téléphone. Sans JavaScript, le menu reste affiché. */
+
+.bouton-menu {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .js .bouton-menu {
+    display: inline-flex;
+  }
+
+  .js .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 16px 16px;
+    border-bottom: 1px solid var(--trait);
+    background: var(--fond);
+  }
+
+  .js .bouton-menu[aria-expanded="true"] + .menu {
+    display: flex;
+  }
+
+  html:not(.js) .entete-contenu {
+    flex-wrap: wrap;
+    padding-block: 8px;
+  }
+
+  html:not(.js) .menu {
+    flex-wrap: wrap;
+  }
+}
+
+html:not(.js) .filtre,
+html:not(.js) .bandeau {
+  display: none;
+}
+
+/* Quadrillage de fond, estompé vers les bords. */
+
+.grille-fond {
+  background-image:
+    linear-gradient(to right, var(--grille) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grille) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 30%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 30%, #000 30%, transparent 100%);
+}
+
+/* Halo vert derrière le titre principal. */
+
+.halo {
+  background: var(--halo);
+  filter: blur(90px);
+}
+
+/* Lumière qui suit le curseur sur les cartes (position mise à jour par js/commun.js). */
+
+.projecteur::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--x, 50%) var(--y, 50%), var(--lueur), transparent 60%);
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+
+.projecteur:hover::before {
+  opacity: 1;
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .projecteur::before {
+    display: none;
+  }
+}
+
+/* Bandeau des technologies : défilement continu, en pause au survol ou avec le bouton « Pause ». */
+
+.bandeau-masque {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.defilement {
+  width: max-content;
+  animation: defiler 70s linear infinite;
+}
+
+.bandeau:hover .defilement,
+.bandeau.en-pause .defilement {
+  animation-play-state: paused;
+}
+
+@keyframes defiler {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Curseur de la carte de code : clignote quatre fois, puis reste fixe. */
+
+.curseur {
+  animation: clignoter 1s steps(1) 4;
+}
+
+@keyframes clignoter {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Apparition discrète des sections. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .apparition {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 200ms ease-out, transform 200ms ease-out;
+  }
+
+  .js .apparition.visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Cartes : apparition en cascade (délai posé par js/accueil.js) et légère élévation au survol. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .carte-anim {
+    transition:
+      opacity 200ms ease-out var(--delai, 0ms),
+      transform 200ms ease-out var(--delai, 0ms),
+      translate 200ms ease-out,
+      border-color 200ms ease-out,
+      box-shadow 200ms ease-out;
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .carte-anim:hover {
+    translate: 0 -4px;
+  }
+}
+
+/* Effets au chargement et au défilement (valeurs --progression et --defilement posées par js/commun.js). */
+
+/* Barre de progression de lecture, sous l'en-tête. */
+.barre-progression {
+  transform: scaleX(var(--progression, 0));
+  transform-origin: 0 50%;
+}
+
+/* En-tête plus opaque dès que la page défile. */
+.defile .entete-site {
+  background: color-mix(in oklab, var(--fond) 92%, transparent);
+  box-shadow: 0 10px 30px -24px rgb(0 0 0 / 0.5);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Entrée : les éléments apparaissent l'un après l'autre, une fois les styles Tailwind prêts. */
+  html:not(.tw-attente) .entree {
+    animation: entree 450ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: calc(var(--ordre, 0) * 80ms);
+  }
+
+  /* Au défilement, le halo descend plus lentement et le contenu de l'accueil s'efface doucement. */
+  .parallaxe-halo {
+    translate: -50% calc(var(--defilement, 0) * 0.35px);
+  }
+
+  .parallaxe-contenu {
+    translate: 0 calc(var(--defilement, 0) * -0.06px);
+    opacity: calc(1 - var(--defilement, 0) / 900);
+  }
+}
+
+@keyframes entree {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(8px);
+  }
+}
+
+/* Réduction des animations : bandeau fixe, sans doublon ni bouton, curseur fixe. */
+
+@media (prefers-reduced-motion: reduce) {
+  .defilement {
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none;
+  }
+
+  .defilement [aria-hidden="true"],
+  .bouton-pause {
+    display: none;
+  }
+
+  .bandeau-masque {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .curseur {
+    animation: none;
+  }
+}

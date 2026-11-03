@@ -1,0 +1,180 @@
+[
+  {
+    "id": "mes-connect",
+    "titre": "MES Connect",
+    "type": "Application mobile",
+    "annee": "",
+    "categorie": "mobile",
+    "contexte": "Application de signalement de pannes d'équipement, avec une interface client et un tableau de bord administrateur.",
+    "resume": "MES Connect permet à un client de signaler une panne d'équipement depuis son téléphone. Un administrateur suit les signalements dans un tableau de bord mis à jour en temps réel et répond au client. L'application fait suite à SignalPanne, une première version réalisée pendant mon stage chez MES-Afrique. J'en assure la conception et le développement complet, avec Flutter et Firebase.",
+    "role": "Conception et développement complet",
+    "technologies": ["Flutter", "Dart", "Firebase Authentication", "Cloud Firestore"],
+    "statut": "Préparation de la publication sur le Play Store",
+    "fonctionnalites": [
+      "Signalement d'une panne par le client",
+      "Tableau de bord administrateur mis à jour en temps réel, avec filtres par statut",
+      "Ouverture de l'adresse du signalement dans Google Maps",
+      "Réponse de l'administrateur au client",
+      "Détection de la perte de connexion, avec un écran dédié"
+    ],
+    "choixTechniques": "J'applique des règles de sécurité Firestore strictes, avec une vérification du rôle administrateur. Je gère l'état de la connexion avec le paquet connectivity_plus.",
+    "difficulte": "Un plantage survient à l'affichage d'un message, après la fermeture de la boîte de réponse.",
+    "solution": "Je crée une boîte de dialogue de réponse qui gère son propre état.",
+    "github": "https://github.com/MARIUS-a12/depannageExpress",
+    "demo": null,
+    "couverture": "images/mes-connect/couverture.jpg",
+    "galerie": [
+      { "fichier": "images/mes-connect/galerie-1.jpg", "legende": "Écran « Nos services » : les types d'intervention proposés, par exemple électricité ou mécanique et électromécanique." },
+      { "fichier": "images/mes-connect/galerie-2.jpg", "legende": "Formulaire de signalement : coordonnées du client, type de panne, description et point de repère." },
+      { "fichier": "images/mes-connect/galerie-3.jpg", "legende": "Liste des demandes du client, avec leur statut : en attente, en cours ou terminée." },
+      { "fichier": "images/mes-connect/galerie-4.jpg", "legende": "Détail d'une demande avec la réponse de MES Connect, et les boutons Appeler et WhatsApp." }
+    ],
+    "video": {
+      "type": "fichier",
+      "source": "videos/mes-connect-demo.mp4",
+      "poster": "images/mes-connect/couverture.jpg"
+    }
+  },
+  {
+    "id": "loung",
+    "titre": "Loung",
+    "type": "Site e-commerce",
+    "annee": "",
+    "categorie": "web",
+    "contexte": "Boutique en ligne avec catalogue, recherche, panier et enregistrement des commandes.",
+    "resume": "Loung est une boutique en ligne. Le visiteur parcourt le catalogue, recherche un produit et remplit son panier. La recherche filtre les produits selon le stock. Le panier reste enregistré dans le navigateur pendant 7 jours. À la validation, la commande est enregistrée dans une base PostgreSQL. J'en assure la conception et le développement complet.",
+    "role": "Conception et développement complet",
+    "technologies": ["PHP", "PostgreSQL", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS"],
+    "statut": "",
+    "fonctionnalites": [
+      "Recherche de produits filtrée selon le stock",
+      "Panier conservé dans le navigateur pendant 7 jours",
+      "Création des commandes en base de données"
+    ],
+    "choixTechniques": "J'enregistre les commandes avec des transactions PDO pour garantir la cohérence des données. Une classe JavaScript gère le panier.",
+    "difficulte": "Le panier existe à deux endroits : en session PHP et dans le navigateur. Les deux versions entrent en conflit.",
+    "solution": "Je garde une seule source pour le panier, côté navigateur. Le navigateur transmet le panier au serveur au moment de la commande.",
+    "github": "https://github.com/MARIUS-a12/gestion_boutique",
+    "demo": null,
+    "couverture": "images/e-commerce/couverture.jpg",
+    "galerie": [
+      { "fichier": "images/e-commerce/galerie-1.jpg", "legende": "Recherche de produits : les résultats pour « iphone »." },
+      { "fichier": "images/e-commerce/galerie-2.jpg", "legende": "Panier conservé dans le navigateur, avec les quantités, les sous-totaux et le total." },
+      { "fichier": "images/e-commerce/galerie-3.jpg", "legende": "Gestion des articles : quantité en stock, quantité commandée et quantité disponible pour chaque produit." },
+      { "fichier": "images/e-commerce/galerie-4.jpg", "legende": "Publication d'un article : nom, image, description, prix, quantité disponible et catégorie." }
+    ],
+    "video": {
+      "type": "fichier",
+      "source": "videos/loung-demo.mp4",
+      "poster": "images/e-commerce/couverture.jpg"
+    }
+  },
+  {
+    "id": "couahi",
+    "titre": "Couahi",
+    "type": "Plateforme de boutiques en ligne",
+    "annee": "2026",
+    "categorie": "web",
+    "contexte": "Plateforme de boutiques en ligne pour les commerçants d'Abidjan : chaque boutique ou restaurant a sa vitrine et son back-office.",
+    "resume": "Couahi donne à chaque commerçant d'Abidjan, boutique ou restaurant, sa propre vitrine en ligne, à son nom et sur son sous-domaine. Le client commande depuis la vitrine ou par WhatsApp, et paie par Mobile Money ou à la livraison. Le commerçant gère son catalogue, son stock, ses commandes, son équipe et ses paiements depuis un back-office. J'en assure la conception et le développement complet.",
+    "role": "Conception et développement complet",
+    "technologies": ["Laravel", "PHP", "PostgreSQL", "React", "TypeScript", "Vite", "TanStack Query", "Tailwind CSS"],
+    "statut": "En développement",
+    "fonctionnalites": [
+      "Vitrine propre à chaque commerce, sur son sous-domaine, avec recherche et filtre par catégorie",
+      "Produits à variantes (taille, coloris) avec un prix et un stock pour chaque combinaison",
+      "Panier conservé sur le téléphone, avec une nouvelle vérification des prix et du stock avant la commande",
+      "Commande depuis la vitrine, ou sur WhatsApp avec un message pré-rempli",
+      "Paiement par Mobile Money (Orange Money, MTN MoMo, Moov Money, Wave) ou à la livraison",
+      "Back-office : catalogue, stock, commandes, vente au comptoir, équipe avec des rôles et des droits",
+      "Espace super-admin pour créer, suspendre et suivre l'abonnement des commerces"
+    ],
+    "choixTechniques": "Le sous-domaine visité détermine le commerce : toutes ses données sont filtrées automatiquement par ce contexte, et chaque sous-domaine a son propre cookie de session. Une commande réserve son stock, et une tâche planifiée rend le stock des commandes non payées qui expirent. Le serveur relit toujours les prix dans la base, jamais ceux envoyés par le client.",
+    "difficulte": "Une photo prise au téléphone pèse plusieurs Mo. Envoyée depuis un ordinateur sans réduction, elle peut aussi apparaître couchée.",
+    "solution": "Je réduis la photo sur le téléphone avant l'envoi, autour de 150 à 400 Ko, pour épargner la data mobile. Côté serveur, l'extension exif remet la photo dans le bon sens, et une photo de plus de 16 mégapixels est refusée avec un message qui dit quoi faire.",
+    "github": "https://github.com/MARIUS-a12/couahi",
+    "demo": null,
+    "couverture": "images/couahi/couverture.jpg",
+    "galerie": [
+      { "fichier": "images/couahi/galerie-1.jpg", "legende": "Vitrine de la boutique de démonstration « Wax Adjamé » : horaires, recherche, filtre par catégorie et prix barrés." },
+      { "fichier": "images/couahi/galerie-2.jpg", "legende": "Fiche d'un produit à variantes : choix de la taille et du coloris, paiement par Mobile Money, commande sur WhatsApp ou ajout au panier." },
+      { "fichier": "images/couahi/galerie-3.jpg", "legende": "Page « Mes commandes » : les commandes passées depuis ce téléphone, et le suivi d'une commande passée depuis un autre appareil." }
+    ],
+    "video": {
+      "type": "fichier",
+      "source": "videos/couahi-demo.mp4",
+      "poster": "images/couahi/couverture.jpg"
+    }
+  },
+  {
+    "id": "automatisation-whatsapp-ia",
+    "titre": "Automatisation WhatsApp par IA",
+    "type": "Service d'automatisation",
+    "annee": "",
+    "categorie": "automatisation",
+    "contexte": "Chatbot WhatsApp Business qui répond aux prospects d'une entreprise et les guide dans un diagnostic.",
+    "resume": "Ce chatbot répond aux prospects d'une entreprise sur WhatsApp et les guide dans un diagnostic. Je le crée dans un outil CRM, puis je le relie au numéro WhatsApp Business de l'entreprise grâce à Meta Business. Avec Make, je connecte aussi une intelligence artificielle au CRM.",
+    "role": "Fondateur, conception du workflow",
+    "technologies": ["CRM", "WhatsApp Business Cloud API", "Meta Business", "Make", "API Claude (Anthropic)"],
+    "statut": "",
+    "fonctionnalites": [
+      "Réponse automatique aux prospects qui écrivent sur WhatsApp",
+      "Accompagnement du prospect dans un diagnostic",
+      "Chatbot géré depuis le CRM et relié au numéro WhatsApp Business de l'entreprise",
+      "Intelligence artificielle connectée au CRM avec Make"
+    ],
+    "choixTechniques": "Je connecte WhatsApp Business par Meta Business : je crée un portefeuille business, j'y rattache le numéro WhatsApp de l'entreprise, puis je lie ce numéro au chatbot du CRM. J'utilise Make pour relier l'intelligence artificielle au CRM.",
+    "difficulte": "",
+    "solution": "",
+    "github": "",
+    "demo": null,
+    "couverture": "images/automatisation-whatsapp-ia/couverture.jpg",
+    "galerie": [
+      { "fichier": "images/automatisation-whatsapp-ia/galerie-1.jpg", "legende": "" },
+      { "fichier": "images/automatisation-whatsapp-ia/galerie-2.jpg", "legende": "" },
+      { "fichier": "images/automatisation-whatsapp-ia/galerie-3.jpg", "legende": "" }
+    ],
+    "video": {
+      "type": "fichier",
+      "source": "videos/automatisation-whatsapp-ia-demo.mp4",
+      "poster": "images/automatisation-whatsapp-ia/couverture.jpg"
+    }
+  },
+  {
+    "id": "power-bi",
+    "titre": "Rapport de ventes Power BI",
+    "type": "Tableau de bord Power BI",
+    "annee": "",
+    "categorie": "donnees",
+    "contexte": "Rapport de ventes interactif : chiffre d'affaires, produits vendus, stock et clients, filtrables par région, période et catégorie.",
+    "resume": "Ce rapport Power BI analyse des ventes à partir de quatre tables : ventes, clients, inventaire et mesures. Il affiche les indicateurs clés, le chiffre d'affaires par produit et par client, et les produits vendus par région et par catégorie. Trois filtres et le filtrage croisé entre les visuels permettent d'isoler un produit, une région ou une période. Je conçois et réalise ce tableau de bord.",
+    "role": "Conception et réalisation du tableau de bord",
+    "technologies": ["Power BI Desktop", "DAX"],
+    "statut": "",
+    "fonctionnalites": [
+      "Indicateurs clés : chiffre d'affaires total, prix moyen par facture, nombre de produits, produits vendus, quantité et valeur du stock",
+      "Chiffre d'affaires par produit, en histogramme",
+      "Produits vendus par région (carte proportionnelle) et par catégorie (graphique en anneau)",
+      "Chiffre d'affaires par client, dans un tableau",
+      "Filtres par région, par année et mois, et par catégorie",
+      "Filtrage croisé : un clic sur un produit ou une région met à jour tous les visuels"
+    ],
+    "choixTechniques": "Le modèle relie quatre tables : BD_ventes (factures et dates d'achat), Clients (région, durée de la relation), Liste d'inventaire (catégorie, prix unitaire, quantité en stock) et une table dédiée aux mesures. Les calculs du rapport, comme le chiffre d'affaires ou le prix moyen, sont des mesures DAX regroupées dans cette table.",
+    "difficulte": "",
+    "solution": "",
+    "github": "",
+    "demo": null,
+    "couverture": "images/power-bi/couverture.jpg",
+    "galerie": [
+      { "fichier": "images/power-bi/galerie-1.jpg", "legende": "Vue d'ensemble : indicateurs clés, chiffre d'affaires par produit, ventes par région et par catégorie, chiffre d'affaires par client." },
+      { "fichier": "images/power-bi/galerie-2.jpg", "legende": "Filtrage croisé : la sélection d'un produit met à jour les indicateurs et les autres visuels." },
+      { "fichier": "images/power-bi/galerie-3.jpg", "legende": "Modèle de données : champs des tables ventes, clients et inventaire, et réglage du visuel par région." },
+      { "fichier": "images/power-bi/galerie-4.jpg", "legende": "Filtre par région : le rapport n'affiche plus que les ventes de la région choisie." }
+    ],
+    "video": {
+      "type": "fichier",
+      "source": "videos/power-bi-demo.mp4",
+      "poster": "images/power-bi/couverture.jpg"
+    }
+  }
+]
